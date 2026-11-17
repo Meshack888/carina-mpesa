@@ -119,7 +119,7 @@ def stk_push(phone, amount, order_id):
 def pay():
 
     data = request.get_json(silent=True) or {}
-
+print("RECEIVED DATA:", data)
     try:
         phone = format_phone(str(data.get("phone", "")))
 
