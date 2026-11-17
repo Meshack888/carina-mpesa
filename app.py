@@ -144,7 +144,8 @@ def pay():
         return jsonify({
             "success": True,
             "message": "Payment prompt sent. Check your phone and enter your M-Pesa PIN.",
-            "checkout_id": result.get("CheckoutRequestID")
+            "checkout_id": result.get("CheckoutRequestID"),
+            "merchant_request_id": result.get("MerchantRequestID")
         })
 
     except (ValueError, requests.RequestException) as error:
