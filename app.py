@@ -10,7 +10,12 @@ from dotenv import load_dotenv
 load_dotenv()
 
 app = Flask(__name__)
-
+# Check server status
+@app.route("/", methods=["GET"])
+def home():
+    return jsonify({
+        "message": "Carina Fashions M-Pesa server is running"
+    })
 # Safaricom sandbox
 BASE_URL = "https://sandbox.safaricom.co.ke"
 
